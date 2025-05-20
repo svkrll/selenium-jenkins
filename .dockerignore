@@ -1,0 +1,25 @@
+# Игнорировать кэш Python
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE-файлы
+.idea
+
+# Результаты тестов Allure и логи
+allure-results/
+logs/
+
+# Виртуальное окружение и системные файлы
+venv/
+.env
+.git/
+.gitignore
+
+# Логи и временные файлы
+*.log
+
+# Документация
+README.md
+

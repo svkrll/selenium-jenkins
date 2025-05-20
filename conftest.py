@@ -13,7 +13,7 @@ def pytest_addoption(parser):
     parser.addoption("--browser", default="chrome")
     parser.addoption("--browser_version", default="128.0")
     parser.addoption("--headless", action="store_true")
-    parser.addoption("--url", default="http://192.168.0.23:8081")
+    parser.addoption("--url", default="http://192.168.0.18:8081")
     parser.addoption("--log_level", action="store", default="INFO")
     parser.addoption(
         "--selenoid", action="store_true", help="Use Selenoid for remote browser execution"
