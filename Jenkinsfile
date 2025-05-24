@@ -41,8 +41,10 @@ pipeline {
                         --alluredir=${ALLURE_RESULTS} \
                         --browser ${BROWSER} \
                         --browser-version ${BROWSER_VERSION} \
+                        --headless\ 
+                        --selenoid \
                         --selenoid-url ${SELENOID_URL} \
-                        --app-url ${OPENCART_URL}
+                        --url ${OPENCART_URL}
                 '''
             }
         }
