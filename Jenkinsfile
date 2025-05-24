@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.10-slim'
-            args '-u root'
-        }
-    }
+    agent any
 
     environment {
         REPO_URL = 'http://github.com/svkrll/selenium-jenkins.git'
@@ -29,6 +24,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 sh '''
+                    apt update -y && apt install -y python3-pip python3-venv
                     python3 -m venv venv
                     . venv/bin/activate
                     pip install --upgrade pip
