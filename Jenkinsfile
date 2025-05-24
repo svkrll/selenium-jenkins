@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        REPO_URL = 'git@github.com:svkrll/selenium-jenkins.git'
+        REPO_URL = 'http://github.com/svkrll/selenium-jenkins.git'
         ALLURE_RESULTS = 'allure-results'
     }
 
