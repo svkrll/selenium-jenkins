@@ -17,10 +17,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                sshagent(['1']) {
                     git url: "${REPO_URL}", branch: 'main'
                 }
-            }
         }
 
         stage('Install Dependencies') {
