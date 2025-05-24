@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'master' }
+    agent any
 
     environment {
         REPO_URL = 'http://github.com/svkrll/selenium-jenkins.git'
