@@ -52,9 +52,12 @@ pipeline {
 
     post {
         always {
-            allure includeProperties: false, jdk: '', results: [[path: "${ALLURE_RESULTS}"]]
-        }
-        always {
+            script {
+                // Allure Report
+                allure includeProperties: false, jdk: '', results: [[path: "${ALLURE_RESULTS}"]]
+            }
+
+            // Архивация артефактов
             archiveArtifacts artifacts: "${ALLURE_RESULTS}/**", fingerprint: true
         }
     }
