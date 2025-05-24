@@ -39,7 +39,6 @@ pipeline {
                     . venv/bin/activate
                     pytest tests/ \
                         --alluredir=${ALLURE_RESULTS} \
-                        -n ${THREADS} \
                         --browser ${BROWSER} \
                         --browser-version ${BROWSER_VERSION} \
                         --selenoid-url ${SELENOID_URL} \
