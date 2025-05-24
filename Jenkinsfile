@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         REPO_URL = 'http://github.com/svkrll/selenium-jenkins.git'
-        ALLURE_RESULTS = 'allure-results'
+        ALLURE_RESULTS = './allure-results'
     }
 
     parameters {
@@ -54,11 +54,11 @@ pipeline {
         always {
             script {
                 // Allure Report
-                allure includeProperties: false, jdk: '', results: [[path: "${ALLURE_RESULTS}"]]
+                allure includeProperties: false, jdk: '', results: [[path: "/var/jenkins_home/workspace/opencast-tests/allure-results"]]
             }
 
             // Архивация артефактов
-            archiveArtifacts artifacts: "${ALLURE_RESULTS}/**", fingerprint: true
+            archiveArtifacts artifacts: "/var/jenkins_home/workspace/opencast-tests/allure-results/**", fingerprint: true
         }
     }
 }
