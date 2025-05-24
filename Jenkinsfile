@@ -40,10 +40,10 @@ pipeline {
                     pytest tests/ \
                         --alluredir=${ALLURE_RESULTS} \
                         --browser ${BROWSER} \
-                        --browser-version ${BROWSER_VERSION} \
+                        --browser_version ${BROWSER_VERSION} \
                         --headless \
                         --selenoid \
-                        --selenoid-url ${SELENOID_URL} \
+                        --selenoid_url ${SELENOID_URL} \
                         --url ${OPENCART_URL}
                 '''
             }
