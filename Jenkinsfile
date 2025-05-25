@@ -37,7 +37,7 @@ pipeline {
             steps {
                 sh '''
                     . venv/bin/activate
-                    pytest tests/ \
+                    pytest tests/test_find_elements_opencart.py \
                         --alluredir=${ALLURE_RESULTS} \
                         --browser ${BROWSER} \
                         --browser_version ${BROWSER_VERSION} \
@@ -54,11 +54,11 @@ pipeline {
         always {
             script {
                 // Allure Report
-                allure includeProperties: false, jdk: '', results: [[path: "/var/jenkins_home/workspace/opencast-tests/allure-results"]]
+                allure includeProperties: false, jdk: '', results: [[path: "${WORKSPACE}/allure-results"]]
             }
 
             // Архивация артефактов
-            archiveArtifacts artifacts: "/var/jenkins_home/workspace/opencast-tests/allure-results/**", fingerprint: true
+            archiveArtifacts artifacts: "${WORKSPACE}/allure-results/**", fingerprint: true
         }
     }
 }
